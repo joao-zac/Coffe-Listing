@@ -8,10 +8,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'var-darkGrey': '#1B1D1F',
+        'var-black': '#111315',
+        'var-grey': '#6F757C',
+        'var-lightBlue': '#BEE3CC',
+        'var-white': '#FEF7EE',
+        'var-lightYellow': '#F6C768',
+        'var-lightRed': '#ED735D'
+      },
+
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'mybeck': "url('../public/bg-cafe.jpg')"
       },
     },
   },

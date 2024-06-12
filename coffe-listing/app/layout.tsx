@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
+// import beckk from "@/public/bg-cafe.jpg"
 
 const DMSans = DM_Sans({ subsets: ["latin"] });
 
@@ -16,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={DMSans.className}>{children}</body>
+      <body className={`${DMSans.className} bg-var-black flex flex-col `}>
+        <header className="bg-mybeck bg-cover bg-no-repeat h-72 " />
+        {children}
+      </body>
     </html>
   );
 }

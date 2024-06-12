@@ -1,9 +1,19 @@
 import Button from "./Components/Button";
 import Card from "./Components/Card";
 
-export default function Home() {
+import { CafeTypes } from "./Types/CafeTypes";
+
+async function handleFetch(): Promise<CafeTypes[]> {
+  const response = await fetch("https://raw.githubusercontent.com/devchallenges-io/web-project-ideas/main/front-end-projects/data/simple-coffee-listing-data.json")
+  return response.json()
+}
+
+export default async function Home() {
+
+  const dados = await handleFetch() 
+
   return (
-    <main className="bg-var-darkGrey my-20 -mt-36 mx-auto rounded-xl text-center">
+    <main className="bg-var-darkGrey my-20 -mt-36 mx-16 rounded-xl text-center flex flex-col items-center">
 
       <header className="flex flex-col mx-[29%] items-center">
 
@@ -21,9 +31,10 @@ export default function Home() {
 
       </header>
 
-      <section className="flex flex-row">
-        <Card />
-        {/* <Card /> */}
+      <section className="flex max-w-5xl flex-wrap  justify-around gap-12">
+        {dados.map((cafe) => (
+          <Card key={cafe.id} name={cafe.name} image={cafe.image} price={cafe.price} rating={cafe.rating} votes={cafe.votes} id={0}/>
+        ))}
       </section>
 
     </main>

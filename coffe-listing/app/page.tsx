@@ -1,10 +1,6 @@
-import useFetch from "./hooks/useFetch"
-import Wrapper from "./Components/Wrapper";
-import Card from "./Components/Card";
+import SectionWrapper from "./Components/SectionWrapper";
 
 export default async function Home() {
-
-  const dados = await useFetch() 
 
   return (
     <main className="bg-var-darkGrey my-20 -mt-36 mx-16 rounded-xl text-center flex flex-col items-center">
@@ -18,15 +14,9 @@ export default async function Home() {
           expertly roasted in small batches and shipped fresh weekly.
         </p>
 
-        <Wrapper />
-
       </header>
 
-      <section className="flex my-16  max-w-5xl flex-wrap justify-around gap-12">
-        {dados.map((cafe) => (
-          <Card key={cafe.id} name={cafe.name} image={cafe.image} price={cafe.price} rating={cafe.rating} votes={cafe.votes} />
-        ))}
-      </section>
+      <SectionWrapper />
 
     </main>
   );

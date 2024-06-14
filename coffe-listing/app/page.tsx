@@ -1,4 +1,4 @@
-import Button from "./Components/Button";
+import Wrapper from "./Components/Wrapper";
 import Card from "./Components/Card";
 
 import { CafeTypes } from "./Types/CafeTypes";
@@ -24,10 +24,7 @@ export default async function Home() {
           expertly roasted in small batches and shipped fresh weekly.
         </p>
 
-        <section className="flex justify-evenly w-[80%]">
-          <Button title="All Products" />
-          <Button title="Available Now" />
-        </section>
+        <Wrapper />
 
       </header>
 

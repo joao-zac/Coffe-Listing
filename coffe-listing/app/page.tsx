@@ -1,16 +1,10 @@
+import useFetch from "./hooks/useFetch"
 import Wrapper from "./Components/Wrapper";
 import Card from "./Components/Card";
 
-import { CafeTypes } from "./Types/CafeTypes";
-
-async function handleFetch(): Promise<CafeTypes[]> {
-  const response = await fetch("https://raw.githubusercontent.com/devchallenges-io/web-project-ideas/main/front-end-projects/data/simple-coffee-listing-data.json")
-  return response.json()
-}
-
 export default async function Home() {
 
-  const dados = await handleFetch() 
+  const dados = await useFetch() 
 
   return (
     <main className="bg-var-darkGrey my-20 -mt-36 mx-16 rounded-xl text-center flex flex-col items-center">

@@ -1,4 +1,3 @@
-// import Card from "./Card";
 import MenuWrapper from "./MenuWrapper";
 import useFetch from "../hooks/useFetch";
 
@@ -7,7 +6,7 @@ export default async function SectionWrapper() {
   const dados = await useFetch()
 
   return (
-    <section className="flex mb-16 mt-8  max-w-5xl flex-wrap justify-around gap-12">
+    <section className="max-w-5xl flex flex-col items-center gap-y-8">
       <MenuWrapper data={dados}/>
     </section>
   )

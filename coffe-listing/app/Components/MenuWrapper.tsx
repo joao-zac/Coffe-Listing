@@ -17,14 +17,17 @@ export default function MenuWrapper({ data }: Props) {
 
   return(
     <>
-      <section className="flex w-[80%] justify-center gap-x-5">
+      <section className="flex w-[80%] justify-center gap-x-5 mt-10">
         <Button state={active === true} setState={() => setActive(true)} title="All Products" />
         <Button state={active === false} setState={() => setActive(false)} title="Available Now" />
       </section>
 
-      {(active === false ? available_coffe : data).map((cafe) => (
-        <Card key={cafe.id} image={cafe.image} name={cafe.name} price={cafe.price} rating={cafe.rating} votes={cafe.votes} available={cafe.available} />
-      ))}
+      <div className="max-w-[80%] px-4 flex flex-wrap gap-4 mb-10">
+        {(active === false ? available_coffe : data).map((cafe) => (
+          <Card key={cafe.id} image={cafe.image} name={cafe.name} price={cafe.price} rating={cafe.rating} votes={cafe.votes} available={cafe.available} />
+        ))}
+      </div>
+      
     </>
   )
 }

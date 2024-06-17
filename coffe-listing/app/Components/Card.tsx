@@ -27,7 +27,6 @@ export default function Card(props: CafeTypes) {
             </div>
             
             <div className="flex mt-2 gap-1">
-
                 <Image src={star} alt="lore impsum"/>
                 <h2 className="text-var-white font-bold">{props.rating}</h2>
                 <span className="text-var-grey font-bold">{props.votes ? `(${props.votes}) votes` : "No ratings"}</span>

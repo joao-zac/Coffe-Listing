@@ -1,4 +1,5 @@
 export type CafeTypes = {
+    available?: boolean
     id?: number
     name: string
     image: string

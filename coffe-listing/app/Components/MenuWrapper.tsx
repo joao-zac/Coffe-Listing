@@ -24,7 +24,16 @@ export default function MenuWrapper({ data }: Props) {
 
       <div className="max-w-[80%] px-4 flex flex-wrap gap-4 mb-10">
         {(active === false ? available_coffe : data).map((cafe) => (
-          <Card key={cafe.id} image={cafe.image} name={cafe.name} price={cafe.price} rating={cafe.rating} votes={cafe.votes} available={cafe.available} />
+          <Card 
+          key={cafe.id} 
+          image={cafe.image} 
+          name={cafe.name} 
+          price={cafe.price} 
+          rating={cafe.rating} 
+          votes={cafe.votes} 
+          available={cafe.available} 
+          popular={cafe.popular}
+          />
         ))}
       </div>
       

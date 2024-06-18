@@ -1,6 +1,7 @@
 export type CafeTypes = {
-    available?: boolean
     id?: number
+    available?: boolean
+    popular: boolean
     name: string
     image: string
     price: number

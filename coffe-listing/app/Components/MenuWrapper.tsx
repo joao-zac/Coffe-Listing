@@ -17,13 +17,15 @@ export default function MenuWrapper({ data }: Props) {
 
   return(
     <>
-      <section className="flex w-[80%] justify-center gap-x-5 mt-10">
+      <section className="flex w-[80%] justify-center gap-x-5 mt-6">
         <Button state={active === true} setState={() => setActive(true)} title="All Products" />
         <Button state={active === false} setState={() => setActive(false)} title="Available Now" />
       </section>
 
-      <div className="max-w-[80%] px-4 flex flex-wrap gap-4 mb-10">
-        {(active === false ? available_coffe : data).map((cafe) => (
+      <div className="mb-20 mt-6 flex justify-center">
+
+        <div className="px-1  flex flex-wrap max-w-[90%] items-center gap-x-20 gap-y-14">
+          {(active === false ? available_coffe : data).map((cafe) => (
           <Card 
           key={cafe.id} 
           image={cafe.image} 
@@ -35,6 +37,8 @@ export default function MenuWrapper({ data }: Props) {
           popular={cafe.popular}
           />
         ))}
+        </div>
+        
       </div>
       
     </>
